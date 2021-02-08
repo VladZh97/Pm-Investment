@@ -1,0 +1,51 @@
+.sale {
+  #asl-storelocator.asl-p-cont .Num_of_store {
+    z-index: 0 !important;
+  }
+}
+
+
+.sale__container {
+  #asl-storelocator.container.no-pad.storelocator-main.asl-p-cont.asl-bg-0{
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+
+}
+
+@media screen and (max-width: $md) {
+  .sale__container {
+    .row.asl-loc-sec {
+      flex-direction: column;
+    }
+    .col-sm-8.col-xs-12.asl-map,
+    .col-sm-4.col-xs-12.asl-panel {
+      max-width: 100%;
+    }
+
+    .col-xs-12.col-sm-4.search_filter {
+      min-width: 100%;
+    }
+    .col-sm-8.col-xs-12.asl-map {
+      max-width: 98%;
+      margin-left: 1%;
+    }
+  }
+}
+
+
+@media screen and (max-width: $sm) {
+
+  body #asl-storelocator.asl-p-cont.asl-template-0 #panel.storelocator-panel {
+    margin: 0 !important;
+  }
+
+  .sale__container {
+
+  .col-sm-8.col-xs-12.asl-map {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+}

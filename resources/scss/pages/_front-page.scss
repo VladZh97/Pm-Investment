@@ -1,0 +1,634 @@
+.hero {
+  margin-top: 100px;
+  &__des {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &__container {
+    max-width: 440px;
+    padding-top: 123px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    list-style: none;
+    min-height: 760px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    &-first {
+      color: #fff;
+      padding: 23px 32px;
+      background-color: $accent;
+      margin: 0;
+    }
+    &-second {
+      display: inline-block;
+      color: $accent;
+      padding: 23px 32px;
+      background-color: #EDF4FA;
+      margin: -7px 0 0;
+      transform: rotate(-3deg);
+      align-self: center;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: #2F2F2F;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 38px auto 0;
+    max-width: 340px;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 40px;
+    color: #004A87;
+    background-color: #fff;
+    padding: 19px 36px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    align-self: center;
+    box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1);
+    transition: all .3s ease-in-out;
+    &:hover {
+      background-color: #004A87;
+      color: #fff;
+    }
+  }
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 9px 0 rgba(35,31,32,0.25);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    img {
+      width: 20px;
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+  .owl-prev {
+    position: absolute;
+    top: 0;
+    left: 14%;
+  }
+  
+  .owl-next {
+    position: absolute;
+    top: 0;
+    right: 14%;
+  }
+}
+
+
+// HERO MEDIA QUERIES
+
+@media screen and (max-width: 1500px) {
+  .hero {
+    .owl-prev {
+      left: 5%;
+    }
+    
+    .owl-next {
+      right: 5%;
+    }
+  }
+}
+@media screen and (max-width: $lg - 1px) {
+  .hero {
+    &__item {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .6);
+        z-index: 1;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+@media screen and (max-width: $md - 1px) {
+  .hero {
+    &__container {
+      padding-top: 70px;
+      margin: 0 auto;
+    }
+    &__item {
+      min-height: 600px;
+    }
+  }
+}
+@media screen and (max-width: $sm - 1px) {
+  .hero {
+    &__title {
+      font-size: 1.8rem;
+      text-align: center;
+      &-first {
+        display: inline-block;
+      }
+    }
+    &__text {
+      font-size: 1.6rem;
+      line-height: 20px;
+      max-width: 300px;
+    }
+    &__link {
+      margin-top: 30px;
+    }
+    .owl-nav {
+      top: 60%;
+    }
+  }
+}
+
+
+
+
+// QUALITY
+.quality {
+  &__inner {
+    position: relative;
+    z-index: 1;
+    margin-top: -200px;
+  }
+  &__title {
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 800;
+  }
+
+  &__des {
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 24px;
+    margin-top: 20px;
+  }
+  &__first.col-md-4 {
+    padding: 54px 30px 30px;
+    background-color: #004A87;
+    max-width: 334px;
+  }
+
+  &__second.col-md-4 {
+    padding: 54px 30px 30px;
+    background-color: #0F5D9E;
+    margin: 0 58px;
+    max-width: 334px;
+  }
+
+  &__third.col-md-4 {
+    padding: 54px 30px 30px;
+    background-color: #1C71B7;
+    max-width: 334px;
+  }
+}
+
+
+// QUALITY MEDIA QUERIES
+
+@media screen and (max-width: $xl - 1px) {
+  .quality {
+    &__first.col-md-4,
+    &__second.col-md-4,
+    &__third.col-md-4 {
+      padding: 40px 30px;
+      max-width: 280px;
+    }
+  }
+}
+@media screen and (max-width: $lg - 1px) {
+  .quality {
+    &__first.col-md-4,
+    &__second.col-md-4,
+    &__third.col-md-4 {
+      padding: 20px 10px;
+      max-width: 236px;
+    }
+    &__second.col-md-4 {
+      margin: 0 5px;
+    }
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__des {
+      line-height: 20px;
+    }
+  }
+}
+@media screen and (max-width: $md - 1px) {
+  .quality {
+    &__inner {
+      margin-top: -50px;
+    }
+
+    &__row {
+      justify-content: space-around;
+    }
+
+    &__third.col-md-4 {
+      margin-top: 30px;
+      padding: 30px 20px;
+      max-width: 300px;
+    }
+  }
+}
+@media screen and (max-width: $sm - 1px) {
+  .quality {
+    &__inner {
+      margin-top: -140px;
+    }
+    &__first.col-md-4,
+    &__second.col-md-4,
+    &__third.col-md-4 {
+      padding: 30px;
+      max-width: 80%;
+      margin-top: 30px;
+    }
+  }
+}
+
+
+
+
+// DESCRIPTION
+.description {
+  &__inner {
+    margin-top: 188px;
+  }
+
+  &__row {
+    &:first-child {
+      position: relative;
+    }
+    &:last-child {
+      margin-top: 189px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    max-width: 477px;
+  }
+
+  &__img {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 477px;
+      height: 100%;
+      background-color: #004A87;
+      z-index: -1;
+      transform: rotate(-8deg);
+    }
+  }
+
+  &__des {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  &__title {
+    color: #004A87;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  &__text {
+    font-size: 1.3rem;
+    line-height: 27px;
+    margin-top: 30px;
+    color: #1c1c1c;
+  }
+}
+
+
+// DESCRIPTION MEDIA QUERIES
+@media screen and (max-width: $lg - 1px) {
+  .description {
+    &__inner {
+      margin-top: 140px;
+    }
+    &__row {
+      &:first-child {
+        &::after {
+          top: -200px;
+          transform: scale(.8);
+          width: 0;
+        }
+      }
+      &:last-child {
+        margin-top: 120px;
+      }
+
+      .row {
+        .col-md-6 {
+          &:last-child {
+            display: flex;
+            align-items: center;
+          }
+        } 
+      }
+    }
+    &__img {
+      width: 90%;
+    }
+  }
+}
+@media screen and (max-width: $md - 1px) {
+  .description {
+    &__row {
+      text-align: center;
+     &:first-child {
+       .col-md-6 {
+         &:first-child {
+           order: 1;
+         }
+       }
+     }
+     &:last-child {
+       margin-top: 30px;
+       .col-md-6 {
+         margin-top: 60px;
+       }
+     }
+    }
+    &__des {
+      max-width: 100%;
+    }
+    &__img {
+      margin: 60px auto 0;
+      width: 70%;
+    }
+  }
+}
+@media screen and (max-width: $sm - 1px) {
+  .description {
+    &__inner {
+      margin-top: 90px;
+    }
+    &__row {
+      text-align: left;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__img {
+      width: 90%;
+    }
+    &__text {
+      line-height: 23px;
+    }
+  }
+}
+
+
+
+
+
+// REVIEWS
+.reviews {
+
+  &__inner {
+    margin-top: 130px;
+    margin-bottom: 200px;
+    position: relative;
+  }
+  &__title {
+    color: #004A87;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  &__des {
+    font-size: 1.3rem;
+    line-height: 27px;
+    margin-top: 30px;
+    color: #1c1c1c;
+  }
+
+  &__list {
+    padding-left: 0;
+  }
+  &__slider-container {
+    max-width: 400px;
+    background-color: #004A87;
+    margin: 0 auto;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(-10deg);
+      z-index: -2;
+      background-color: #5EA5E0;
+    }
+  }
+  &__item {
+    padding: 60px 50px;
+    list-style: none;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 28px;
+    &-autor {
+      font-weight: 400;
+      text-align: right;
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    bottom: -66px;
+    left: 0;
+    width: 100%;
+  }
+
+  .owl-prev {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 50px);
+    transform: translateX(-50%);
+  }
+
+  .owl-next {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 50px);
+    transform: translateX(-50%);
+  }
+
+  .owl-dots {
+    position: absolute;
+    bottom: -87px;
+    left: calc(40% + 20px);
+
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e1eef8;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    img {
+      width: 10px;
+    }
+  }
+
+  .owl-dot {
+    background-color: #e1eef8 !important;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    &:nth-child(2) {
+      margin: 0 5px;
+    }
+    &.active {
+      background-color: #32355D !important;
+    }
+  }
+}
+
+// REVIEWS MEDIA QUERIES
+
+@media screen and (max-width: $lg - 1px) {
+  .reviews {
+    &__inner {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      &::after {
+        top: -200px;
+        transform: scale(.8);
+        width: 0;
+      }
+    }
+    &__slider-container {
+      max-width: 300px;
+    }
+    &__slider {
+      display: flex;
+      align-items: center;
+    }
+    &__item {
+      padding: 30px;
+    }
+
+    .owl-dots {
+      left: calc(50%);
+      transform: translate(-50%);
+  
+    }
+  }
+}
+@media screen and (max-width: $md - 1px) {
+  .reviews {
+    &__inner {
+      margin-top: 20px;
+    }
+    &__des {
+      text-align: center;
+    }
+    &__slider-container {
+      margin-top: 60px;
+      max-width: 360px;
+    }
+
+    &__slider {
+      margin-bottom: 70px;
+    }
+  }
+}
+@media screen and (max-width: $sm - 1px) {
+  .reviews {
+    &__inner {
+      margin-bottom: 70px;
+      
+    }
+    &__title {
+      text-align: center;
+    }
+    &__des {
+      text-align: left;
+    }
+    &__slider-container {
+      max-width: 90%;
+    }
+    &__item {
+      padding: 0 15px;
+    line-height: 22px;
+    font-weight: 400;
+    &-autor {
+      margin-right: 10px;
+    }
+    }
+    .owl-nav {
+      bottom: -40px;
+    }
+    .owl-dots {
+      bottom: -60px;
+    }
+  }
+}

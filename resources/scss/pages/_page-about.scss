@@ -1,0 +1,222 @@
+.top {
+  &__about {
+    background-image: url('../img/about.png');
+  }
+}
+
+.about {
+  &__inner {
+    margin-top: 63px;
+    margin-bottom: 200px;
+  }
+
+  &__row {
+    &:first-child {
+      .about__image {
+        margin-left: 5%;
+      }
+    }
+  }
+  &__image, 
+  &__des {
+    max-width: 45%;
+
+    &-title {
+      color: #004A87;
+      font-size: 2.4rem;
+      font-weight: 800;
+    }
+    &-text {
+      font-size: 1.3rem;
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    &-first {
+      margin-top: 60px;
+    }
+    &-second {
+      margin: 45px 0;
+    }
+  }
+
+  &__image {
+    &.about__image-main {
+      .about__image {
+        &-first {
+          margin-top: 0;
+        }
+
+        &-second {
+          margin-top: 0;
+          margin-bottom: 47px;
+        }
+        &-top {
+        background-color: #fff;
+        padding: 22px;
+        position: relative;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #5EA5E0;
+          z-index: -1;
+          transform: rotate(-12deg);
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 105px;
+          background-color: #fff;
+          padding: 66px 84px;
+          position: relative;
+          box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #004A87;
+            z-index: -1;
+            transform: rotate(-12deg);
+            }
+        }
+
+      }
+    }
+  }
+
+  &__bg {
+    margin-top: 200px;
+    position: relative;
+    &::after {
+      content: url('../img/pasek_about.png');
+      position: absolute;
+      top: -250px;
+      left: 0;
+      z-index: -2;
+    }
+
+    .about__des {
+      margin-left: 5%;
+    }
+  }
+}
+
+
+// ABOUT MEDIA QUERIES
+@media screen and (max-width: $lg) {
+  .about {
+    &__inner {
+      margin-bottom: 100px;
+    }
+    &__des,
+    &__image {
+      max-width: 100%;
+      flex: auto;
+    }
+
+    &__image {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      &-first {
+        margin-top: 0;
+      }
+      &-main {
+        margin: 80px 0;
+        order: 2;
+      }
+    }
+
+    &__row:first-child .about__image {
+      margin-left: 0;
+    }
+
+    &__bg {
+      margin-top: 70px;
+      .about__des {
+        margin-left: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: $md) {
+  .about__container {
+    margin-bottom: 60px;
+  }
+  .about__image {
+    &-first {
+      margin-top: 50px;
+    }
+    &.about__image-main {
+      .about__image {
+        &-bottom {
+          padding: 40px 50px;
+        }
+        &-first,
+        &-second {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .about {
+    &__inner {
+      margin-top: 35px;
+      margin-bottom: 70px;
+    }
+
+    &__des {
+      &-text {
+        ul {
+          padding-left: 15px;
+        }
+      }
+    }
+    &__image {
+      &-main {
+        margin-bottom: 50px;
+      }
+      img {
+        width: 90%;
+      }
+      &-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+    }
+
+  }
+
+  .about__image.about__image-main .about__image {
+    &-bottom {
+    padding: 15px 20px;
+  }
+  &-second {
+    margin-bottom: 20px;
+  }
+}
+}
